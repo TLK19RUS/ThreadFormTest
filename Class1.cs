@@ -30,17 +30,7 @@ public class Class1
     {
         try
         {
-            if (Program.main_form.InvokeRequired)
-            {
-                Program.main_form.BeginInvoke(new MethodInvoker(delegate
-                {
-                    Program.main_form.set_text(text);
-                }));
-            }
-            else
-            {
-                Program.main_form.set_text(text);
-            }
+            Program.main_form.set_text(text);
         }
         catch (Exception ex)
         {

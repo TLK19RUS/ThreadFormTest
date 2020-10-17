@@ -22,7 +22,17 @@ namespace WindowsFormsApp1
 
         public void set_text(String text)
         {
-            textBox1.Text += text + "\r\n";
+            if (this.InvokeRequired)
+            {
+                this.BeginInvoke(new MethodInvoker(delegate
+                {
+                    textBox1.Text += text + "\r\n";
+                }));
+            }
+            else
+            {
+                textBox1.Text += text + "\r\n";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
